@@ -44,6 +44,7 @@ dependencies:
   dartz: ^0.10.1
   another_flushbar: ^1.10.29
   stacked: ^2.3.8
+  stacked_services: ^0.8.25
 
 
 dev_dependencies:
