@@ -61,12 +61,17 @@ class _HomePageState extends State<HomePage> {
                             }
                           },
                           height: 45.h,
-                          child: Text('Continue',
-                              style: TextStyle(
-                                fontSize: 15.sp,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.white,
-                              )))
+                          child: model.isBusy
+                              ? const CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white),
+                                )
+                              : Text('Continue',
+                                  style: TextStyle(
+                                    fontSize: 15.sp,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.white,
+                                  )))
                     ],
                   ),
                 ),

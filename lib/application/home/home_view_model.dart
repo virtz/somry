@@ -18,7 +18,10 @@ class HomeViewModel extends BaseViewModel {
     setBusy(true);
     final failureOrSuccessOption =
         await _iSummaryRepo.getSummary(content: content);
-    return failureOrSuccessOption.fold((l) => null, (content) {
+    return failureOrSuccessOption.fold((l) {
+      setBusy(false);
+      log(l.message!);
+    }, (content) {
       setBusy(false);
       content = summarisedContent!;
       log(content.toJson().toString());
