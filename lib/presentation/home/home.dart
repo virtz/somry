@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: 'Summary Text')),
-                      SizedBox(height: size.height * 0.1),
+                      SizedBox(height: size.height * 0.06),
                       CustomButton(
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
@@ -71,7 +71,8 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 15.sp,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.white,
-                                  )))
+                                  ))),
+                      SizedBox(height: size.height * 0.06),
                     ],
                   ),
                 ),
