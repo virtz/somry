@@ -1,5 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:developer';
+
 import 'package:somry/domain/api_content/contet.dart';
 import 'package:somry/domain/summary/i_summary_repo.dart';
 import 'package:stacked/stacked.dart';
@@ -19,6 +21,7 @@ class HomeViewModel extends BaseViewModel {
     return failureOrSuccessOption.fold((l) => null, (content) {
       setBusy(false);
       content = summarisedContent!;
+      log(content.toJson().toString());
       notifyListeners();
     });
   }

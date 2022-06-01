@@ -12,7 +12,8 @@ import 'package:somry/domain/api_content/contet.dart';
 import 'package:somry/domain/core/general_failure.dart';
 import 'package:somry/domain/summary/i_summary_repo.dart';
 import 'package:http/http.dart' as http;
-import 'package:somry/infrastructure/summary/core/constants.dart';
+import 'package:somry/infrastructure/core/constants.dart';
+// import 'package:somry/infrastructure/summary/core/constants.dart';
 
 @LazySingleton(as: ISummaryRepo)
 class SummaryRepo implements ISummaryRepo {
