@@ -22,7 +22,7 @@ class SummaryRepo implements ISummaryRepo {
       {required String content}) async {
     try {
       var payload = {"sm_api_input": content};
-     
+
       var request = http.MultipartRequest('POST', Uri.parse(HttpService().url))
         ..fields.addAll(payload);
       http.Response response =
@@ -31,6 +31,7 @@ class SummaryRepo implements ISummaryRepo {
         case 200:
           var body = json.decode(response.body);
           ApiContent apiContent = ApiContent.fromJson(body);
+          // log(apiContent.toString());
           return right(apiContent);
         case 400:
           return left(

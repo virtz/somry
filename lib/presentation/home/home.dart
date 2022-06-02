@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     return ViewModelBuilder<HomeViewModel>.reactive(
         viewModelBuilder: () => getIt<HomeViewModel>(),
         builder: (context, model, child) => Scaffold(
+                // key: getIt<GlobalKey<ScaffoldMessengerState>>(),
                 body: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15.w),

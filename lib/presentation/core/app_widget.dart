@@ -7,7 +7,7 @@ import 'package:somry/presentation/routes/router.gr.dart' as router;
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  final _appRouter = getIt<router.Router>();
+  final _appRouter = router.Router();
 
   // This widget is the root of your application.
   @override
