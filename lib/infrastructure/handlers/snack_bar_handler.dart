@@ -16,7 +16,7 @@ class SnackbarHandlerImpl implements SnackbarHandler {
   late final GlobalKey<ScaffoldMessengerState> _key;
 
   SnackbarHandlerImpl({GlobalKey<ScaffoldMessengerState>? state}) {
-    _key = state ?? getIt<GlobalKey<ScaffoldMessengerState>>();
+    _key = state ?? GlobalKey<ScaffoldMessengerState>();
   }
 
   @override
