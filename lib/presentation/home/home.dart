@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                             if (formKey.currentState!.validate()) {
                               model.getSummary(content: controller.text);
                             }
+                            // model.navigate(context);
                           },
                           height: 45.h,
                           child: model.isBusy

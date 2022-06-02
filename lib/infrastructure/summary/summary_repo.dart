@@ -27,21 +27,21 @@ class SummaryRepo implements ISummaryRepo {
         ..fields.addAll(payload);
       http.Response response =
           await http.Response.fromStream(await request.send());
+      var body = json.decode(response.body);
       switch (response.statusCode) {
         case 200:
-          var body = json.decode(response.body);
           ApiContent apiContent = ApiContent.fromJson(body);
           // log(apiContent.toString());
           return right(apiContent);
         case 400:
-          return left(
-              GeneralFailure.badRequest(ErrorMessages().badRequestString));
+          return left(GeneralFailure.serverError(
+              body["sm_api_message"] ?? ErrorMessages().badRequestString));
         case 401:
           return left(
               GeneralFailure.unAuthorized(ErrorMessages().unAuthorizedString));
         case 500:
-          return left(
-              GeneralFailure.serverError(ErrorMessages().serverErrorString));
+          return left(GeneralFailure.serverError(
+              body["sm_api_message"] ?? ErrorMessages().serverErrorString));
         default:
           return left(
               GeneralFailure.serverError(ErrorMessages().serverErrorString));

@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:somry/infrastructure/handlers/snack_bar_handler.dart';
+// import 'package:somry/infrastructure/handlers/snack_bar_handler.dart';
 import 'package:somry/injection.dart';
 import 'package:somry/presentation/routes/router.gr.dart' as router;
 // import 'package:stacked_services/stacked_services.dart';
@@ -8,7 +9,7 @@ import 'package:somry/presentation/routes/router.gr.dart' as router;
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  final _appRouter = router.Router();
+  final _appRouter = getIt<router.AppRouter>();
   final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =
       getIt<GlobalKey<ScaffoldMessengerState>>();
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         routeInformationParser: _appRouter.defaultRouteParser(),
-        routerDelegate: _appRouter.delegate(),
+        routerDelegate: AutoRouterDelegate(_appRouter),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
