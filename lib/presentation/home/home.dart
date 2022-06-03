@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
 
     return ViewModelBuilder<HomeViewModel>.reactive(
         viewModelBuilder: () => getIt<HomeViewModel>(),
+        disposeViewModel: false,
         builder: (context, model, child) => Scaffold(
                 // key: getIt<GlobalKey<ScaffoldMessengerState>>(),
                 body: SingleChildScrollView(

@@ -36,9 +36,8 @@ class HomeViewModel extends BaseViewModel {
       summarisedContent = content;
 
       notifyListeners();
+      log(summarisedContent.toString());
       getIt<AppRouter>().push(const SummeryDisplay());
-      // AutoRouter.of(context).push(SummeryDisplay());
-      // _appRouter.push(const SummeryDisplay());
     });
   }
 
