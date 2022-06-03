@@ -11,6 +11,8 @@ class SummeryDisplay extends StatefulWidget {
 class _SummeryDisplayState extends State<SummeryDisplay> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body:Column(children:[])
+    );
   }
 }
