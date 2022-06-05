@@ -26,12 +26,28 @@ class _SummeryDisplayState extends State<SummeryDisplay> {
         padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(height: size.height * 0.08),
-          BackButton(),
+          const BackButton(),
+          SizedBox(height: size.height * 0.02),
+          Text('Here\'s your summary...', style: TextStyle(fontSize: 15.5.sp)),
           SizedBox(height: size.height * 0.02),
           Text(
             widget.content!.sm_api_content!,
             textAlign: TextAlign.justify,
             style: TextStyle(height: 1.5.sp, color: Colors.grey[600]),
+          ),
+          SizedBox(height: size.height * 0.02),
+          InkWell(
+            onTap: () {
+              model.copySummary(widget.content!.sm_api_content!);
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(model.isCopied ? 'Copied' : 'Copy'),
+                SizedBox(width: 5.w),
+                Icon(model.isCopied ? Icons.check : Icons.copy)
+              ],
+            ),
           )
         ]),
       )),

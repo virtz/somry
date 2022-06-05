@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:somry/injection.dart';
 
 import 'presentation/core/app_widget.dart';
 
-void main() {
+Future<void> main() async {
   configureInjection();
-  runApp( MyApp());
+  await dotenv.load(fileName: ".env");
+  runApp(MyApp());
 }
-

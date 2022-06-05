@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 // import 'package:auto_route/auto_route.dart';
+import 'package:flutter/services.dart';
 import 'package:somry/domain/api_content/contet.dart';
 import 'package:somry/domain/summary/i_summary_repo.dart';
 import 'package:somry/infrastructure/handlers/snack_bar_handler.dart';
@@ -22,6 +23,7 @@ class HomeViewModel extends BaseViewModel {
     this.snackbarHandlerImpl,
   );
   ApiContent? summarisedContent;
+  bool isCopied = false;
 
   getSummary({required String content}) async {
     setBusy(true);
@@ -45,5 +47,12 @@ class HomeViewModel extends BaseViewModel {
     // getIt<AppRouter>().push(const SummeryDisplay());
     // AutoRouter.of(context).push(SummeryDisplay());
     log("method called");
+  }
+
+  copySummary(String text) {
+    Clipboard.setData(ClipboardData(text: text));
+    isCopied = true;
+    notifyListeners();
+    snackbarHandlerImpl.showSnackbar('Summary copied');
   }
 }
