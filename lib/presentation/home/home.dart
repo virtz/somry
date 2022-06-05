@@ -35,8 +35,12 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: size.height * 0.1),
-                      Text('Enter  text for summary here',
+                      SizedBox(height: size.height * 0.06),
+                      Text('Hi, whatever you name is, I don\'t really care!!',
+                          style: TextStyle(
+                              fontSize: 16.6.sp, fontWeight: FontWeight.w600)),
+                      SizedBox(height: size.height * 0.04),
+                      Text('Enter  text for summary here, or don\'t',
                           style:
                               TextStyle(fontSize: 15.sp, color: Colors.grey)),
                       TextFormField(
