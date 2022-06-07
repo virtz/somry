@@ -2,6 +2,9 @@
 
 <p>An app to help summarise lengthy texts by using the summry api</p>
 
+<p>
+<img src="https://github.com/virtz/somry/blob/main/screenshots/screenshot1.png", width:"150px" height="400" hspace="5" vspace="20"/>
+</p>
 ## Design
 - Stacked architecture
 - DDD design pattern.
@@ -16,4 +19,5 @@ If you encounter any bugs or are facing any issues with the code, please don't h
 Feature requests, issues, pull requests and questions are welcome.
 
 ## Credits 😎🤓
+
 virtz(owner of repo): Mobile Developer [( github )](https://github.com/virtz)
