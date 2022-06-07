@@ -4,8 +4,11 @@
 
 <p>
 <img src="https://github.com/virtz/somry/blob/main/screenshots/screenshot1.png", width:"150px" height="400" hspace="5" vspace="20"/>
+<img src="https://github.com/virtz/somry/blob/main/screenshots/screenshot2.png", width:"150px" height="400" hspace="5" vspace="20"/>
 </p>
+
 ## Design
+
 - Stacked architecture
 - DDD design pattern.
 - Dependency injection
