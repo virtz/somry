@@ -1,16 +1,19 @@
 # somry
 
-an app to help summary lengthy texts
+<p>An app to help summarise lengthy texts by using the summry api</p>
 
-## Getting Started
+## Design
+- Stacked architecture
+- DDD design pattern.
+- Dependency injection
+- Abstraction of services and handlers.
+- Clean code and separation of concerns
 
-This project is a starting point for a Flutter application.
+If you encounter any bugs or are facing any issues with the code, please don't hesitate to reach out to me. email :odunayoojomo0@gmail.com
 
-A few resources to get you started if this is your first Flutter project:
+## Contribution 🍕🗺
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Feature requests, issues, pull requests and questions are welcome.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Credits 😎🤓
+virtz(owner of repo): Mobile Developer [( github )](https://github.com/virtz)

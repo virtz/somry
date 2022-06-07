@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: size.height * 0.06),
-                      Text('Hi, whatever you name is',
+                      Text('Hi, Anonymous',
                           style: TextStyle(
                               fontSize: 16.6.sp, fontWeight: FontWeight.w600)),
                       SizedBox(height: size.height * 0.04),
