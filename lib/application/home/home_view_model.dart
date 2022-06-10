@@ -24,6 +24,7 @@ class HomeViewModel extends BaseViewModel {
   );
   ApiContent? summarisedContent;
   bool isCopied = false;
+  bool readMore = false;
 
   getSummary({required String content}) async {
     setBusy(true);
@@ -54,5 +55,10 @@ class HomeViewModel extends BaseViewModel {
     isCopied = true;
     notifyListeners();
     snackbarHandlerImpl.showSnackbar('Summary copied');
+  }
+
+  setReadMore() {
+    readMore = !readMore;
+    notifyListeners();
   }
 }
