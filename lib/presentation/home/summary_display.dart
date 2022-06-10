@@ -18,7 +18,7 @@ class _SummeryDisplayState extends State<SummeryDisplay> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
+    ScrollController controller = ScrollController();
     return ViewModelBuilder<HomeViewModel>.reactive(
       viewModelBuilder: () => getIt<HomeViewModel>(),
       builder: (context, model, child) => Scaffold(
@@ -33,9 +33,21 @@ class _SummeryDisplayState extends State<SummeryDisplay> {
           Text(
             widget.content!.sm_api_content!,
             textAlign: TextAlign.justify,
-            style: TextStyle(height: 1.5.sp, color: Colors.grey[600]),
+            maxLines: model.readMore ? null : 5,
+            overflow:
+                model.readMore ? TextOverflow.visible : TextOverflow.ellipsis,
+            style: TextStyle(
+              height: 1.5.sp,
+              color: Colors.grey[600],
+            ),
           ),
           SizedBox(height: size.height * 0.02),
+          GestureDetector(
+              onTap: () {
+                model.setReadMore();
+                // !model.readMore ? controller.jumpTo(400.h) : null;
+              },
+              child: Text((model.readMore ? "Read less" : "Read more"))),
           InkWell(
             onTap: () {
               model.copySummary(widget.content!.sm_api_content!);
