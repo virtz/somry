@@ -26,6 +26,7 @@ class HomeViewModel extends BaseViewModel {
   bool isCopied = false;
   bool readMore = false;
 
+//**very import method,  */
   getSummary({required String content}) async {
     setBusy(true);
     final failureOrSuccessOption =
@@ -44,19 +45,21 @@ class HomeViewModel extends BaseViewModel {
     });
   }
 
+@Deprecated('has not been used')
   navigate(context) {
     // getIt<AppRouter>().push(const SummeryDisplay());
     // AutoRouter.of(context).push(SummeryDisplay());
     log("method called");
   }
 
+//* called when user copies text.
   copySummary(String text) {
     Clipboard.setData(ClipboardData(text: text));
     isCopied = true;
     notifyListeners();
     snackbarHandlerImpl.showSnackbar('Summary copied');
   }
-
+//* function for read more property..
   setReadMore() {
     readMore = !readMore;
     notifyListeners();
