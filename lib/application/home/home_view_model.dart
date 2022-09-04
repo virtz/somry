@@ -26,7 +26,7 @@ class HomeViewModel extends BaseViewModel {
   bool isCopied = false;
   bool readMore = false;
 
-//**very import method,  */
+//**very important method,  */
   getSummary({required String content}) async {
     setBusy(true);
     final failureOrSuccessOption =
