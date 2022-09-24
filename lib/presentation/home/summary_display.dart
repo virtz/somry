@@ -45,7 +45,7 @@ class _SummeryDisplayState extends State<SummeryDisplay> {
           GestureDetector(
               onTap: () {
                 model.setReadMore();
-                // !model.readMore ? controller.jumpTo(400.h) : null;
+                !model.readMore ? controller.jumpTo(400.h) : null;
               },
               child: Text((model.readMore ? "Read less" : "Read more"))),
           InkWell(

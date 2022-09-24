@@ -31,6 +31,7 @@ dependencies:
   stacked: ^2.3.8
   stacked_services: ^0.8.25
   flutter_dotenv: ^5.0.2
+  share_plus: ^4.4.0
 
 
 dev_dependencies:
