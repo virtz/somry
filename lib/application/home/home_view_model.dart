@@ -64,4 +64,8 @@ class HomeViewModel extends BaseViewModel {
     readMore = !readMore;
     notifyListeners();
   }
+
+  void shareContent(){
+    
+  }
 }
