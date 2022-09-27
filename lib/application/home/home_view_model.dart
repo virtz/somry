@@ -3,6 +3,7 @@
 import 'dart:developer';
 
 // import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:somry/domain/api_content/contet.dart';
 import 'package:somry/domain/summary/i_summary_repo.dart';
@@ -12,6 +13,7 @@ import 'package:somry/injection.dart';
 import 'package:stacked/stacked.dart';
 import 'package:somry/presentation/routes/router.gr.dart';
 import 'package:injectable/injectable.dart';
+import 'package:share_plus/share_plus.dart';
 
 @injectable
 class HomeViewModel extends BaseViewModel {
@@ -45,7 +47,7 @@ class HomeViewModel extends BaseViewModel {
     });
   }
 
-@Deprecated('has not been used')
+  @Deprecated('has not been used')
   navigate(context) {
     // getIt<AppRouter>().push(const SummeryDisplay());
     // AutoRouter.of(context).push(SummeryDisplay());
@@ -59,13 +61,21 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
     snackbarHandlerImpl.showSnackbar('Summary copied');
   }
+
 //* function for read more property..
   setReadMore() {
     readMore = !readMore;
     notifyListeners();
   }
 
-  void shareContent(){
-    
+  void shareContent(String content, context) async {
+    ///get string data in this case the summarised Text,
+    /// create an instance of the share Plugin
+    /// call share plugin to share text,
+    final box = context!.findRenderObject() as RenderBox?;
+    // Share share = Share();
+    await Share.share(content,
+        subject: "subject",
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size);
   }
 }
