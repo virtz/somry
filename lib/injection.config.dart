@@ -17,7 +17,7 @@ import 'infrastructure/core/injectables.dart' as _i13;
 import 'infrastructure/core/third_party_services.dart' as _i12;
 import 'infrastructure/handlers/snack_bar_handler.dart' as _i10;
 import 'infrastructure/summary/summary_repo.dart' as _i9;
-import 'presentation/routes/router.dart'
+import 'presentation/routes/router.gr.dart'
     as _i3; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -27,7 +27,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final thirdPartyServicesModule = _$ThirdPartyServicesModule();
   final injectablesModule = _$InjectablesModule();
-  gh.lazySingleton<_i3.$AppRouter>(() => _i3.$AppRouter());
+  gh.lazySingleton<_i3.AppRouter>(() => _i3.AppRouter());
   gh.lazySingleton<_i4.BottomSheetService>(
       () => thirdPartyServicesModule.bottomSheetService);
   gh.lazySingleton<_i4.DialogService>(
@@ -35,7 +35,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i5.GlobalKey<_i5.ScaffoldMessengerState>>(
       () => injectablesModule.globalKey);
   gh.lazySingleton<_i6.HttpService>(() => _i7.HttpServiceImpl());
-  gh.lazySingleton<_i8.ISummaryRepo>(() => _i9.SummaryRepo());
+  gh.lazySingleton<_i8.ISummaryRepo>(
+      () => _i9.SummaryRepo(get<_i6.HttpService>()));
   gh.lazySingleton<_i4.NavigationService>(
       () => thirdPartyServicesModule.navigationService);
   gh.lazySingleton<_i10.SnackbarHandler>(() => _i10.SnackbarHandlerImpl(
