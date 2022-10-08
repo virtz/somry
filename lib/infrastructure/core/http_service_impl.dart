@@ -36,7 +36,7 @@ class HttpServiceImpl implements HttpService {
       var body = json.decode(response.body);
       switch (response.statusCode) {
         case 200:
-          return Right(body);
+          return Right(Right(body));
         case 400:
           return Left(GeneralFailure.badRequest(
               body["sm_api_message"] ?? ErrorMessages().badRequestString));
